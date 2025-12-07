@@ -31,7 +31,7 @@ public class Salary {
     private BigDecimal netSalary = BigDecimal.ZERO;
     private String note;
 
-    // ✅ Các trường phụ cấp chi tiết từ Employee
+    //  Các trường phụ cấp chi tiết từ Employee
     @Column(name = "allowance_meal", precision = 12, scale = 2)
     private BigDecimal allowanceMeal = BigDecimal.ZERO;
 
@@ -41,14 +41,14 @@ public class Salary {
     @Column(name = "allowance_seniority", precision = 12, scale = 2)
     private BigDecimal allowanceSeniority = BigDecimal.ZERO;
 
-    // ✅ Các trường bảo hiểm chi tiết
+    //  Các trường bảo hiểm chi tiết
     @Column(name = "insurance_health", precision = 12, scale = 2)
     private BigDecimal insuranceHealth = BigDecimal.ZERO;
 
     @Column(name = "insurance_social", precision = 12, scale = 2)
     private BigDecimal insuranceSocial = BigDecimal.ZERO;
 
-    // ✅ Thông tin chấm công
+    //  Thông tin chấm công
     @Column(name = "working_days")
     private Integer workingDays = 0;
 
@@ -122,7 +122,7 @@ public class Salary {
         this.note = note;
     }
 
-    // ✅ Getters và Setters cho các trường mới
+    //  Getters và Setters cho các trường mới
     public BigDecimal getAllowanceMeal() {
         return allowanceMeal;
     }

@@ -53,10 +53,10 @@ public class UserHomeController {
         }
         
         if (currentEmployee != null) {
-            // ✅ Lấy thống kê cá nhân
+            //  Lấy thống kê cá nhân
             Map<String, Object> personalStats = getPersonalStats(currentEmployee);
             model.addAttribute("personalStats", personalStats);
-              // ✅ Lấy dữ liệu chi tiết cho dashboard  
+              //  Lấy dữ liệu chi tiết cho dashboard  
             try {
                 var recentAttendances = attendanceService.getAttendanceByEmployee(currentEmployee.getId());
                 var currentMonthSalary = salaryService.getCurrentMonthSalaryByEmployee(currentEmployee.getId());
@@ -79,7 +79,7 @@ public class UserHomeController {
         return "user/home";
     }
     
-    // ✅ Helper method để tính thống kê cá nhân
+    //  Helper method để tính thống kê cá nhân
     private Map<String, Object> getPersonalStats(Employee employee) {
         Map<String, Object> stats = new HashMap<>();
         

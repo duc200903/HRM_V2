@@ -39,7 +39,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                 method="post"
                                 modelAttribute="employeeCreateRequest"
                             >
-                                <!-- ✅ ACCOUNT INFO SECTION -->
+                                <!--  ACCOUNT INFO SECTION -->
                                 <div class="card mb-4">
                                     <div class="card-header bg-primary text-white">
                                         <h5 class="mb-0"><i class="fas fa-user-lock me-2"></i>Thông tin tài khoản</h5>
@@ -125,7 +125,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     </div>
                                 </div>
 
-                                <!-- ✅ EMPLOYEE INFO SECTION -->
+                                <!--  EMPLOYEE INFO SECTION -->
                                 <div class="card mb-4">
                                     <div class="card-header bg-success text-white">
                                         <h5 class="mb-0"><i class="fas fa-id-card me-2"></i>Thông tin nhân viên</h5>
@@ -271,7 +271,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     </div>
                                 </div>
 
-                                <!-- ✅ SALARY AND ALLOWANCE SECTION -->
+                                <!--  SALARY AND ALLOWANCE SECTION -->
                                 <div class="card mb-4">
                                     <div class="card-header bg-warning text-dark">
                                         <h5 class="mb-0">
@@ -436,7 +436,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     </div>
                                 </div>
 
-                                <!-- ✅ INFO ALERT -->
+                                <!--  INFO ALERT -->
                                 <div class="alert alert-info">
                                     <i class="fas fa-info-circle me-2"></i>
                                     <small>
@@ -445,7 +445,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     </small>
                                 </div>
 
-                                <!-- ✅ ACTION BUTTONS -->
+                                <!--  ACTION BUTTONS -->
                                 <div class="d-flex gap-2">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fas fa-user-plus me-1"></i>Tạo nhân viên
@@ -466,7 +466,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
             crossorigin="anonymous"
         ></script>
 
-        <!-- ✅ JavaScript for real-time salary calculation -->
+        <!--  JavaScript for real-time salary calculation -->
         <script>
             function formatCurrency(amount) {
                 return new Intl.NumberFormat('vi-VN').format(amount) + ' VNĐ';

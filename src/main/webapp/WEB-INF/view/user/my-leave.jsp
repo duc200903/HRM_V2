@@ -286,7 +286,7 @@
                     return;
                 }
                 
-                console.log('✅ Tìm thấy date inputs');
+                console.log(' Tìm thấy date inputs');
                 
                 // Set minimum date to today
                 const today = new Date().toISOString().split('T')[0];
@@ -349,7 +349,7 @@
                     dayInfo.innerHTML = '<i class="fas fa-calendar-day me-1"></i>(' + daysDiff + ' ngày)';
                     
                     // Insert after end date input
-                    endDateInput.parentNode.appendChild(dayInfo);                    console.log('✅ Day info added:', dayInfo.innerHTML);
+                    endDateInput.parentNode.appendChild(dayInfo);                    console.log(' Day info added:', dayInfo.innerHTML);
                 }
             });
         </script>

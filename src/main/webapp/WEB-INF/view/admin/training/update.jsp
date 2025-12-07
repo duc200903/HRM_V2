@@ -65,7 +65,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   />
                 </div>
 
-                <!-- ✅ TRAINING INFO SECTION -->
+                <!--  TRAINING INFO SECTION -->
                 <div class="card mb-4">
                   <div class="card-header bg-warning text-white">
                     <h5 class="mb-0">
@@ -155,7 +155,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                       </div>
                     </div>
                   </div>
-                </div>                <!-- ✅ PARTICIPANTS RESULTS SECTION -->
+                </div>                <!--  PARTICIPANTS RESULTS SECTION -->
                 <div class="card mb-4">
                   <div class="card-header bg-success text-white">
                     <h5 class="mb-0">
@@ -229,13 +229,13 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                       </div>
                     </c:if>
                   </div>
-                </div>                <!-- ✅ Info alert -->
+                </div>                <!--  Info alert -->
                 <div class="alert alert-info">
                   <i class="fas fa-info-circle me-2"></i>
                   <small>Các trường có dấu (*) là bắt buộc. Thay đổi kết quả đào tạo và nhấn "Cập nhật khóa đào tạo" để lưu tất cả.</small>
                 </div>
 
-                <!-- ✅ Action buttons -->
+                <!--  Action buttons -->
                 <div class="d-flex gap-2">
                   <button type="submit" class="btn btn-warning">
                     <i class="fas fa-save me-1"></i>Cập nhật khóa đào tạo

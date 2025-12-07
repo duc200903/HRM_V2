@@ -61,7 +61,7 @@ public class RequestLeaveController {
     public ResponseEntity<String> approveRequest(@PathVariable Long id) {
         try {
             requestLeaveService.approveRequest(id);
-            return ResponseEntity.ok("✅ Đã duyệt đơn nghỉ phép");
+            return ResponseEntity.ok(" Đã duyệt đơn nghỉ phép");
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("Lỗi: " + e.getMessage());
         }
@@ -107,7 +107,7 @@ public class RequestLeaveController {
             requestLeave.setStatus(newStatus);
             requestLeave.setNote(note);
             
-            // ✅ Tự động lấy email của người đang đăng nhập làm approvedBy
+            //  Tự động lấy email của người đang đăng nhập làm approvedBy
             if ("approved".equals(status) || "rejected".equals(status)) {
                 String approverEmail = principal.getName(); // Email của người đăng nhập
                 requestLeave.setApprovedBy(approverEmail);
@@ -117,7 +117,7 @@ public class RequestLeaveController {
                 requestLeave.setApprovedBy(null);
                 requestLeave.setApprovedAt(null);
             }
-              // ✅ Xử lý ngày phép còn lại khi thay đổi trạng thái
+              //  Xử lý ngày phép còn lại khi thay đổi trạng thái
             Employee employee = requestLeave.getEmployee();
             int leaveDays = (int) java.time.temporal.ChronoUnit.DAYS.between(
                 requestLeave.getStartDate(), requestLeave.getEndDate()) + 1;
@@ -130,7 +130,7 @@ public class RequestLeaveController {
                 employeeService.saveEmployee(employee); // Save employee
                 
                 redirectAttributes.addFlashAttribute("message", 
-                    "✅ Duyệt đơn thành công! Đã trừ " + leaveDays + " ngày phép. Còn lại: " + newRemaining + " ngày.");
+                    " Duyệt đơn thành công! Đã trừ " + leaveDays + " ngày phép. Còn lại: " + newRemaining + " ngày.");
             }
             // Nếu từ approved sang trạng thái khác: hoàn lại ngày phép
             else if (oldStatus == RequestLeave.Status.approved && newStatus != RequestLeave.Status.approved) {
@@ -144,7 +144,7 @@ public class RequestLeaveController {
                     "Đã " + statusText + "! Hoàn lại " + leaveDays + " ngày phép. Tổng cộng: " + newRemaining + " ngày.");
             }
             else {
-                String message = "approved".equals(status) ? "✅ Đã duyệt đơn nghỉ phép" : 
+                String message = "approved".equals(status) ? " Đã duyệt đơn nghỉ phép" : 
                                "rejected".equals(status) ? "❌ Đã từ chối đơn nghỉ phép" : 
                                "⏰ Đã chuyển về trạng thái chờ duyệt";
                 redirectAttributes.addFlashAttribute("message", message);
@@ -152,7 +152,7 @@ public class RequestLeaveController {
             
             requestLeaveService.saveRequestLeave(requestLeave);
             
-            String message = "approved".equals(status) ? "✅ Đã duyệt đơn nghỉ phép" : 
+            String message = "approved".equals(status) ? " Đã duyệt đơn nghỉ phép" : 
                            "rejected".equals(status) ? "❌ Đã từ chối đơn nghỉ phép" : 
                            "⏰ Đã chuyển về trạng thái chờ duyệt";
             redirectAttributes.addFlashAttribute("message", message);

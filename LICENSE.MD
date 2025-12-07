@@ -14,7 +14,7 @@ This source code is provided **exclusively** for students enrolled in **Java Spr
 
 ---
 
-## ✅ PERMITTED ACTIONS
+## PERMITTED ACTIONS
 
 ✔ You **can use this project for personal learning.**  
 ✔ You **can modify this code for educational purposes.**  
@@ -28,8 +28,8 @@ If you **share this source code without permission**, it is considered a **copyr
 
 📢 **Violators may face:**
 
-- DMCA takedown requests.
-- Account suspension on learning platforms.
-- Legal action in serious cases.
+-   DMCA takedown requests.
+-   Account suspension on learning platforms.
+-   Legal action in serious cases.
 
 For permissions or inquiries, contact: **admin@doan.vn**

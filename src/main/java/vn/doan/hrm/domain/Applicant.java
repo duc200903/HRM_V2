@@ -27,7 +27,7 @@ public class Applicant {
             appliedAt = LocalDateTime.now();
     }
 
-    // ✅ Biến định dạng ngày (dùng để hiển thị trong JSP)
+    //  Biến định dạng ngày (dùng để hiển thị trong JSP)
     @Transient
     private String formattedAppliedAt;
 

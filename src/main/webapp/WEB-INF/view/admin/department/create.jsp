@@ -39,7 +39,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                 modelAttribute="newDepartment"
                                 class="row"
                             >
-                                <!-- ✅ Name field -->
+                                <!--  Name field -->
                                 <div class="mb-3 col-12">
                                     <c:set var="errorName">
                                         <form:errors path="name" cssClass="invalid-feedback" />
@@ -58,7 +58,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     ${errorName}
                                 </div>
 
-                                <!-- ✅ Description field -->
+                                <!--  Description field -->
                                 <div class="mb-3 col-12">
                                     <c:set var="errorDescription">
                                         <form:errors path="description" cssClass="invalid-feedback" />
@@ -77,7 +77,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     ${errorDescription}
                                 </div>
 
-                                <!-- ✅ Info alert -->
+                                <!--  Info alert -->
                                 <div class="col-12 mb-3">
                                     <div class="alert alert-info">
                                         <i class="fas fa-info-circle me-2"></i>
@@ -88,7 +88,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     </div>
                                 </div>
 
-                                <!-- ✅ Action buttons -->
+                                <!--  Action buttons -->
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="fas fa-plus me-1"></i>Tạo phòng ban

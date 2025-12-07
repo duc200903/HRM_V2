@@ -70,7 +70,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   />
                 </div>
 
-                <!-- ✅ Name field -->
+                <!--  Name field -->
                 <div class="mb-3 col-12">
                   <c:set var="errorName">
                     <form:errors path="name" cssClass="invalid-feedback" />
@@ -89,7 +89,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   ${errorName}
                 </div>
 
-                <!-- ✅ Description field -->
+                <!--  Description field -->
                 <div class="mb-3 col-12">
                   <c:set var="errorDescription">
                     <form:errors path="description" cssClass="invalid-feedback" />
@@ -108,7 +108,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   ${errorDescription}
                 </div>
 
-                <!-- ✅ Info alert -->
+                <!--  Info alert -->
                 <div class="col-12 mb-3">
                   <div class="alert alert-info">
                     <i class="fas fa-info-circle me-2"></i>
@@ -116,7 +116,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   </div>
                 </div>
 
-                <!-- ✅ Action buttons -->
+                <!--  Action buttons -->
                 <div class="col-12">
                   <button type="submit" class="btn btn-warning">
                     <i class="fas fa-save me-1"></i>Cập nhật phòng ban

@@ -15,7 +15,7 @@ Mã nguồn này được cung cấp **chỉ dành riêng cho học viên đã �
 
 ---
 
-## ✅ Hành Vi Được Phép
+## Hành Vi Được Phép
 
 ✔ Bạn **được phép sử dụng mã nguồn này để học tập cá nhân**.  
 ✔ Bạn **được phép chỉnh sửa mã nguồn để thực hành** (nhưng **không được chia sẻ công khai**).  
@@ -29,10 +29,10 @@ Nếu bạn **chia sẻ mã nguồn này mà không có sự cho phép**, bạn 
 
 📢 **Các biện pháp có thể được thực hiện:**
 
-- Yêu cầu **DMCA Takedown** trên GitHub, GitLab, Bitbucket.
-- Báo cáo vi phạm lên nền tảng học trực tuyến.
-- Khóa tài khoản học viên và chấm dứt quyền truy cập vào khóa học.
-- Áp dụng **biện pháp pháp lý** nếu vi phạm nghiêm trọng.
+-   Yêu cầu **DMCA Takedown** trên GitHub, GitLab, Bitbucket.
+-   Báo cáo vi phạm lên nền tảng học trực tuyến.
+-   Khóa tài khoản học viên và chấm dứt quyền truy cập vào khóa học.
+-   Áp dụng **biện pháp pháp lý** nếu vi phạm nghiêm trọng.
 
 📩 **Liên hệ để xin cấp phép hoặc giải đáp thắc mắc:**  
 ✉️ **admin@doan.vn**

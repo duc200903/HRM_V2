@@ -80,7 +80,7 @@ public class SalaryController {
     public String autoCalculate(@RequestParam String month, RedirectAttributes redirectAttributes) {
         try {
             salaryService.autoCalculateSalaries(month);
-            redirectAttributes.addFlashAttribute("successMessage", "✅ Đã tính lương tự động cho tháng " + month);
+            redirectAttributes.addFlashAttribute("successMessage", " Đã tính lương tự động cho tháng " + month);
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("errorMessage", "❌ " + e.getMessage());
         }
@@ -152,7 +152,7 @@ public class SalaryController {
             redirectAttributes.addFlashAttribute("successMessage",
                     "Đã cập nhật lương cho nhân viên " + existingSalary.getEmployee().getFullName());
 
-            // ✅ dùng tháng từ existingSalary (chắc chắn có)
+            //  dùng tháng từ existingSalary (chắc chắn có)
             return "redirect:/admin/salary-report?month=" + existingSalary.getMonth();
 
         } catch (Exception e) {

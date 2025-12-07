@@ -10,9 +10,9 @@ import vn.doan.hrm.domain.Salary;
 public interface SalaryRepository extends JpaRepository<Salary, Long> {
     boolean existsByEmployeeIdAndMonth(Long employeeId, String month);    List<Salary> findByMonth(String month);
     
-    // ✅ Lấy lương theo employee
+    //  Lấy lương theo employee
     List<Salary> findByEmployeeId(Long employeeId);
     
-    // ✅ Lấy lương theo employee và tháng
+    //  Lấy lương theo employee và tháng
     Salary findByEmployeeIdAndMonth(Long employeeId, String month);
 }

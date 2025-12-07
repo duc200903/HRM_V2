@@ -15,7 +15,7 @@ public class DashboardController {    @Autowired
 
     @GetMapping("/admin/dashboard")
     public String getAdminDashboard(Model model) {
-        // ✅ Lấy thống kê thực tế từ DashboardService
+        //  Lấy thống kê thực tế từ DashboardService
         Map<String, Object> stats = dashboardService.getDashboardStats();
         Map<String, Long> departmentStats = dashboardService.getDepartmentStats();
         

@@ -6,57 +6,57 @@ Hệ thống quản lý nhân sự toàn diện được xây dựng bằng **Sp
 
 ### 👥 Quản lý người dùng và phân quyền
 
--   ✅ **Multi-role system**: Admin, HR, Manager, Employee
--   ✅ **Secure authentication**: Spring Security với custom login handler
--   ✅ **Role-based access control**: Phân quyền chi tiết theo từng chức năng
--   ✅ **User management**: Tạo, sửa, xóa tài khoản admin
+-   **Multi-role system**: Admin, HR, Manager, Employee
+-   **Secure authentication**: Spring Security với custom login handler
+-   **Role-based access control**: Phân quyền chi tiết theo từng chức năng
+-   **User management**: Tạo, sửa, xóa tài khoản admin
 
 ### 🏢 Quản lý tổ chức
 
--   ✅ **Department management**: Quản lý phòng ban
--   ✅ **Employee management**: CRUD nhân viên với thông tin đầy đủ
--   ✅ **Department transfer history**: Lưu lịch sử chuyển phòng ban tự động
--   ✅ **Employee profiles**: Thông tin cá nhân, lương, phụ cấp, bảo hiểm
+-   **Department management**: Quản lý phòng ban
+-   **Employee management**: CRUD nhân viên với thông tin đầy đủ
+-   **Department transfer history**: Lưu lịch sử chuyển phòng ban tự động
+-   **Employee profiles**: Thông tin cá nhân, lương, phụ cấp, bảo hiểm
 
 ### ⏰ Chấm công và nghỉ phép
 
--   ✅ **Attendance tracking**: Chấm công vào/ra với tính trạng thái
--   ✅ **Leave request management**: Quản lý đơn nghỉ phép
--   ✅ **Approval workflow**: Quy trình duyệt đơn nghỉ phép
--   ✅ **Real-time attendance**: Chấm công trực tuyến cho nhân viên
+-   **Attendance tracking**: Chấm công vào/ra với tính trạng thái
+-   **Leave request management**: Quản lý đơn nghỉ phép
+-   **Approval workflow**: Quy trình duyệt đơn nghỉ phép
+-   **Real-time attendance**: Chấm công trực tuyến cho nhân viên
 
 ### 💰 Quản lý lương và tài chính
 
--   ✅ **Salary calculation**: Tính lương tự động theo chấm công
--   ✅ **Payroll management**: Quản lý bảng lương chi tiết
--   ✅ **Allowances & deductions**: Phụ cấp và khấu trừ đa dạng
--   ✅ **Salary reports**: Báo cáo lương theo tháng
+-   **Salary calculation**: Tính lương tự động theo chấm công
+-   **Payroll management**: Quản lý bảng lương chi tiết
+-   **Allowances & deductions**: Phụ cấp và khấu trừ đa dạng
+-   **Salary reports**: Báo cáo lương theo tháng
 
 ### 📚 Đào tạo và phát triển
 
--   ✅ **Training programs**: Quản lý chương trình đào tạo
--   ✅ **Employee training tracking**: Theo dõi kết quả đào tạo
--   ✅ **Training assignments**: Phân công nhân viên vào khóa học
--   ✅ **Progress monitoring**: Giám sát tiến độ học tập
+-   **Training programs**: Quản lý chương trình đào tạo
+-   **Employee training tracking**: Theo dõi kết quả đào tạo
+-   **Training assignments**: Phân công nhân viên vào khóa học
+-   **Progress monitoring**: Giám sát tiến độ học tập
 
 ### 📊 Đánh giá hiệu suất
 
--   ✅ **Performance reviews**: Đánh giá hiệu suất định kỳ
--   ✅ **Scoring system**: Hệ thống chấm điểm hiệu suất
--   ✅ **Review management**: Quản lý chu trình đánh giá
+-   **Performance reviews**: Đánh giá hiệu suất định kỳ
+-   **Scoring system**: Hệ thống chấm điểm hiệu suất
+-   **Review management**: Quản lý chu trình đánh giá
 
 ### 🤝 Tuyển dụng
 
--   ✅ **Job postings**: Đăng tin tuyển dụng
--   ✅ **Application tracking**: Theo dõi hồ sơ ứng viên
--   ✅ **Recruitment workflow**: Quy trình tuyển dụng hoàn chỉnh
+-   **Job postings**: Đăng tin tuyển dụng
+-   **Application tracking**: Theo dõi hồ sơ ứng viên
+-   **Recruitment workflow**: Quy trình tuyển dụng hoàn chỉnh
 
 ### 📈 Dashboard và báo cáo
 
--   ✅ **Admin dashboard**: Tổng quan toàn hệ thống
--   ✅ **Personal dashboard**: Trang cá nhân cho nhân viên
--   ✅ **Statistical reports**: Báo cáo thống kê đa dạng
--   ✅ **Real-time data**: Dữ liệu cập nhật thời gian thực
+-   **Admin dashboard**: Tổng quan toàn hệ thống
+-   **Personal dashboard**: Trang cá nhân cho nhân viên
+-   **Statistical reports**: Báo cáo thống kê đa dạng
+-   **Real-time data**: Dữ liệu cập nhật thời gian thực
 
 ## 🛠 Công nghệ sử dụng
 
@@ -217,30 +217,30 @@ mvn spring-boot:run
 
 ### ADMIN (Toàn quyền)
 
--   ✅ Quản lý tất cả users và employees
--   ✅ Quản lý departments
--   ✅ Quản lý đơn nghỉ phép
--   ✅ Xem tất cả reports và dashboard
+-   Quản lý tất cả users và employees
+-   Quản lý departments
+-   Quản lý đơn nghỉ phép
+-   Xem tất cả reports và dashboard
 
 ### HR (Nhân sự)
 
--   ✅ Quản lý employees
--   ✅ Quản lý attendance và salary
--   ✅ Quản lý training programs
--   ✅ Quản lý recruitment
+-   Quản lý employees
+-   Quản lý attendance và salary
+-   Quản lý training programs
+-   Quản lý recruitment
 
 ### MANAGER (Quản lý)
 
--   ✅ Xem thông tin employees
--   ✅ Quản lý performance reviews
--   ✅ Xem reports trong phạm vi quản lý
+-   Xem thông tin employees
+-   Quản lý performance reviews
+-   Xem reports trong phạm vi quản lý
 
 ### EMPLOYEE (Nhân viên)
 
--   ✅ Xem thông tin cá nhân
--   ✅ Chấm công online
--   ✅ Tạo đơn nghỉ phép
--   ✅ Xem lương và training
+-   Xem thông tin cá nhân
+-   Chấm công online
+-   Tạo đơn nghỉ phép
+-   Xem lương và training
 
 ## 📊 Tính năng nổi bật
 

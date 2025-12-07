@@ -26,7 +26,7 @@
                     </h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Tổng quan hệ thống</li>
-                    </ol>                    <!-- ✅ Thống kê chính -->
+                    </ol>                    <!--  Thống kê chính -->
                     <div class="row">
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
 
-                    <!-- ✅ Thống kê vai trò -->
+                    <!--  Thống kê vai trò -->
                     <div class="row mb-4">
                         <div class="col-xl-3 col-md-6">
                             <div class="card border-left-primary shadow h-100 py-2">
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="row">
-                        <!-- ✅ Thống kê chấm công hôm nay -->
+                        <!--  Thống kê chấm công hôm nay -->
                         <div class="col-xl-12">
                             <div class="card mb-4">
                                 <div class="card-header">
@@ -194,7 +194,7 @@
                         </div>
 
                    
-                    <!-- ✅ Thống kê phòng ban -->
+                    <!--  Thống kê phòng ban -->
                     <div class="row">
                         <div class="col-xl-8">
                             <div class="card mb-4">
@@ -263,7 +263,7 @@
         </div>
                     </div>
 
-                    <!-- ✅ Thông báo quan trọng -->
+                    <!--  Thông báo quan trọng -->
                    <sec:authorize access="hasAnyRole('ADMIN', 'HR')">
                         <div class="card mb-4">
                             <div class="card-header">
@@ -307,7 +307,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // ✅ Chart phòng ban
+        //  Chart phòng ban
         const ctx = document.getElementById('departmentChart');
         const departmentData = {
             labels: [

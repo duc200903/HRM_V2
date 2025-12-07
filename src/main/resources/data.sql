@@ -60,7 +60,7 @@ INSERT INTO attendances (id, employee_id, date, check_in, check_out, status) VAL
 (9, 4, '2025-09-04', '08:20:00', '17:00:00', 'late'),
 (10, 4, '2025-09-05', '08:00:00', '17:00:00', 'present'),
 
--- ✅ Lê Văn Quản (ID 2) → toàn bộ present → được thưởng 500k
+--  Lê Văn Quản (ID 2) → toàn bộ present → được thưởng 500k
 (11, 2, '2025-09-01', '07:55:00', '17:00:00', 'present'),
 (12, 2, '2025-09-02', '08:00:00', '17:00:00', 'present'),
 (13, 2, '2025-09-03', '08:00:00', '17:00:00', 'present'),
@@ -69,7 +69,7 @@ INSERT INTO attendances (id, employee_id, date, check_in, check_out, status) VAL
 
 -- ❌ Trần Thị HR (ID 1) → không chấm công → không tạo bản lương
 
--- ✅ Nguyễn Văn C (ID 5) → toàn bộ absent
+--  Nguyễn Văn C (ID 5) → toàn bộ absent
 (16, 5, '2025-09-01', NULL, NULL, 'absent'),
 (17, 5, '2025-09-02', NULL, NULL, 'absent'),
 (18, 5, '2025-09-03', NULL, NULL, 'absent'),

@@ -230,7 +230,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                         </div>
                                     </div>
 
-                                    <!-- ✅ SALARY AND BENEFITS SECTION -->
+                                    <!--  SALARY AND BENEFITS SECTION -->
                                     <div class="card mt-4">
                                         <div class="card-header bg-success text-white">
                                             <h5 class="mb-0">
@@ -372,7 +372,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                         </div>
                                     </div>
 
-                                    <!-- ✅ ADDITIONAL INFO SECTION -->
+                                    <!--  ADDITIONAL INFO SECTION -->
                                     <div class="card mt-4">
                                         <div class="card-header bg-info text-white">
                                             <h5 class="mb-0">

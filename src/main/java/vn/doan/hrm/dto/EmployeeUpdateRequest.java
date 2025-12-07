@@ -30,7 +30,7 @@ public class EmployeeUpdateRequest {
     private LocalDate hireDate;
     private LocalDate dob;
 
-    // ✅ Thông tin lương và phụ cấp mới
+    //  Thông tin lương và phụ cấp mới
     private String employeeCode;
     private BigDecimal baseSalary = BigDecimal.ZERO;
     private BigDecimal allowanceMeal = BigDecimal.ZERO;
@@ -197,7 +197,7 @@ public class EmployeeUpdateRequest {
         this.remainingLeaveDays = remainingLeaveDays;
     }
 
-    // ✅ Helper methods để format date cho HTML form
+    //  Helper methods để format date cho HTML form
     public String getFormattedDob() {
         if (this.dob != null) {
             return this.dob.toString(); // yyyy-MM-dd format cho HTML5 date input

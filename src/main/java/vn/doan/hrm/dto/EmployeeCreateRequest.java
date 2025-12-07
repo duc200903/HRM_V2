@@ -32,7 +32,7 @@ public class EmployeeCreateRequest {
     private String position;
     private Long departmentId;
     private LocalDate hireDate;
-    private LocalDate dob;    // ✅ Thông tin lương và phụ cấp mới
+    private LocalDate dob;    //  Thông tin lương và phụ cấp mới
     private String employeeCode = "";
     private BigDecimal baseSalary = BigDecimal.ZERO;
     private BigDecimal allowanceMeal = BigDecimal.ZERO;

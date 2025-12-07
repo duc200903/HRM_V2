@@ -47,7 +47,7 @@ public class UserSalaryController {
                     salaries = new java.util.ArrayList<>();
                 }
                 
-                // ✅ Apply filtering logic
+                //  Apply filtering logic
                 List<Salary> filteredSalaries = new java.util.ArrayList<>();
                 LocalDate now = LocalDate.now();
                 System.err.println(now);

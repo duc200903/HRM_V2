@@ -44,7 +44,7 @@ public class RequestLeaveService {
         requestLeaveRepository.save(request);
     }
 
-    // ✅ Filter methods
+    //  Filter methods
     public List<RequestLeave> getRequestLeavesByYear(Integer year) {
         if (year == null) {
             return getAllRequestLeaves();
@@ -80,12 +80,12 @@ public class RequestLeaveService {
         return requestLeaveRepository.findDistinctYears();
     }
 
-    // ✅ Lấy đơn nghỉ phép theo employee
+    //  Lấy đơn nghỉ phép theo employee
     public List<RequestLeave> getRequestLeavesByEmployee(Long employeeId) {
         return requestLeaveRepository.findByEmployeeId(employeeId);
     }
 
-    // ✅ Lấy đơn nghỉ phép gần đây theo employee
+    //  Lấy đơn nghỉ phép gần đây theo employee
     public List<RequestLeave> getRecentRequestLeavesByEmployee(Long employeeId, int limit) {
         var allRequests = requestLeaveRepository.findByEmployeeId(employeeId);
         return allRequests.stream()

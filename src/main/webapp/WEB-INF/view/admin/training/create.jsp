@@ -45,7 +45,7 @@ prefix="spring" uri="http://www.springframework.org/tags" %>
                 method="post"
                 modelAttribute="training"
               >
-                <!-- ✅ TRAINING INFO SECTION -->
+                <!--  TRAINING INFO SECTION -->
                 <div class="card mb-4">
                   <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">
@@ -143,7 +143,7 @@ prefix="spring" uri="http://www.springframework.org/tags" %>
                   </div>
                 </div>
 
-                <!-- ✅ EMPLOYEE SELECTION SECTION -->
+                <!--  EMPLOYEE SELECTION SECTION -->
                 <div class="card mb-4">
                   <div class="card-header bg-success text-white">
                     <h5 class="mb-0">
@@ -181,7 +181,7 @@ prefix="spring" uri="http://www.springframework.org/tags" %>
                   </div>
                 </div>
 
-                <!-- ✅ INFO ALERT -->
+                <!--  INFO ALERT -->
                 <div class="alert alert-info">
                   <i class="fas fa-info-circle me-2"></i>
                   <small>
@@ -189,7 +189,7 @@ prefix="spring" uri="http://www.springframework.org/tags" %>
                   </small>
                 </div>
 
-                <!-- ✅ ACTION BUTTONS -->
+                <!--  ACTION BUTTONS -->
                 <div class="d-flex gap-2">
                   <button type="submit" class="btn btn-primary">
                     <i class="fas fa-plus me-1"></i>Tạo khóa đào tạo

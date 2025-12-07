@@ -55,7 +55,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                         <div class="mt-5 w-50 mx-auto">
                             <h2 class="mb-4">Tạo tài khoản Admin mới</h2>
                             <form:form action="/admin/user/create" method="post" modelAttribute="newUser" class="row">
-                                <!-- ✅ Username field -->
+                                <!--  Username field -->
                                 <div class="mb-3 col-12 col-md-6">
                                     <c:set var="errorUsername">
                                         <form:errors path="username" cssClass="invalid-feedback" />
@@ -74,7 +74,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     ${errorUsername}
                                 </div>
 
-                                <!-- ✅ Email field -->
+                                <!--  Email field -->
                                 <div class="mb-3 col-12 col-md-6">
                                     <c:set var="errorEmail">
                                         <form:errors path="email" cssClass="invalid-feedback" />
@@ -93,7 +93,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     ${errorEmail}
                                 </div>
 
-                                <!-- ✅ Password field -->
+                                <!--  Password field -->
                                 <div class="mb-3 col-12 col-md-6">
                                     <c:set var="errorPasswordHash">
                                         <form:errors path="passwordHash" cssClass="invalid-feedback" />
@@ -111,7 +111,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     />
                                     ${errorPasswordHash}
                                 </div>
-                                <!-- ✅ Role field - ADMIN ONLY -->
+                                <!--  Role field - ADMIN ONLY -->
                                 <div class="mb-3 col-12 col-md-6">
                                     <c:set var="errorRole">
                                         <form:errors path="role" cssClass="invalid-feedback" />
@@ -125,7 +125,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     </form:select>
                                     ${errorRole}
                                 </div>
-                                <!-- ✅ Info alert -->
+                                <!--  Info alert -->
                                 <div class="col-12 mb-3">
                                     <div class="alert alert-warning">
                                         <i class="fas fa-exclamation-triangle me-2"></i>
@@ -137,7 +137,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@taglib uri="http://www.springframe
                                     </div>
                                 </div>
 
-                                <!-- ✅ Action buttons -->
+                                <!--  Action buttons -->
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-danger">
                                         <i class="fas fa-user-plus me-1"></i>Tạo tài khoản Admin

@@ -143,7 +143,7 @@
                                                     </td>
                                                     <td>
                                                         <div class="btn-group" role="group">
-                                                            <!-- ✅ View Button -->
+                                                            <!--  View Button -->
                                                             <a
                                                                 href="/admin/user/detail/${user.id}"
                                                                 class="btn btn-outline-info btn-sm"
@@ -152,7 +152,7 @@
                                                                 <i class="fas fa-eye"></i>
                                                             </a>
 
-                                                            <!-- ✅ Edit Button -->
+                                                            <!--  Edit Button -->
                                                             <a
                                                                 href="/admin/user/update/${user.id}"
                                                                 class="btn btn-outline-warning btn-sm"
@@ -161,7 +161,7 @@
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
 
-                                                            <!-- ✅ Delete Button -->
+                                                            <!--  Delete Button -->
                                                             <c:choose>
                                                                 <c:when test="${user.role == 'admin'}">
                                                                     <button
@@ -210,7 +210,7 @@
             </div>
         </div>
 
-        <!-- ✅ Success/Error Messages -->
+        <!--  Success/Error Messages -->
         <c:if test="${not empty successMessage}">
             <div class="toast-container position-fixed bottom-0 end-0 p-3">
                 <div class="toast show" role="alert">
@@ -244,7 +244,7 @@
         ></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <!-- ✅ Auto hide toasts after 5 seconds -->
+        <!--  Auto hide toasts after 5 seconds -->
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var toastElements = document.querySelectorAll('.toast');

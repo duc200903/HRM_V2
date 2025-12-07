@@ -10,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     
-    // ✅ Tìm Employee theo User
+    //  Tìm Employee theo User
     Optional<Employee> findByUser(User user);
 }

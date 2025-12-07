@@ -52,7 +52,7 @@ public class EmployeeController {
         return "admin/employee/show";
     }
 
-    // ✅ Hiển thị form tạo employee mới (tích hợp User + Employee)
+    //  Hiển thị form tạo employee mới (tích hợp User + Employee)
     @GetMapping("/create")
     public String showCreateForm(Model model) {
         model.addAttribute("employeeCreateRequest", new EmployeeCreateRequest());
@@ -64,7 +64,7 @@ public class EmployeeController {
         return "admin/employee/create";
     }
 
-    // ✅ Xử lý tạo employee mới (tích hợp User + Employee)
+    //  Xử lý tạo employee mới (tích hợp User + Employee)
     @PostMapping("/create")
     public String createEmployee(@Valid @ModelAttribute("employeeCreateRequest") EmployeeCreateRequest request,
             BindingResult bindingResult,
@@ -97,28 +97,28 @@ public class EmployeeController {
 
             // 2. Tạo Employee record với đầy đủ thông tin
             Employee newEmployee = new Employee();
-            newEmployee.setUser(savedUser); // ✅ Link User → Employee
+            newEmployee.setUser(savedUser); //  Link User → Employee
             newEmployee.setFullName(request.getFullName());
             newEmployee.setPhone(request.getPhone());
             newEmployee.setAddress(request.getAddress());
             newEmployee.setPosition(request.getPosition());
             newEmployee.setDob(request.getDob());
 
-            // ✅ Tự động tạo mã nhân viên nếu không có
+            //  Tự động tạo mã nhân viên nếu không có
             if (request.getEmployeeCode() == null || request.getEmployeeCode().trim().isEmpty()) {
                 newEmployee.setEmployeeCode(generateEmployeeCode());
             } else {
                 newEmployee.setEmployeeCode(request.getEmployeeCode());
             }
 
-            // ✅ Set ngày vào làm - nếu không điền thì lấy ngày hiện tại
+            //  Set ngày vào làm - nếu không điền thì lấy ngày hiện tại
             if (request.getHireDate() != null) {
                 newEmployee.setHireDate(request.getHireDate());
             } else {
                 newEmployee.setHireDate(java.time.LocalDate.now());
             }
 
-            // ✅ Set thông tin lương và phụ cấp
+            //  Set thông tin lương và phụ cấp
             newEmployee.setBaseSalary(request.getBaseSalary() != null ? request.getBaseSalary() : BigDecimal.ZERO);
             newEmployee.setAllowanceMeal(
                     request.getAllowanceMeal() != null ? request.getAllowanceMeal() : BigDecimal.ZERO);
@@ -127,13 +127,13 @@ public class EmployeeController {
             newEmployee.setAllowanceSeniority(
                     request.getAllowanceSeniority() != null ? request.getAllowanceSeniority() : BigDecimal.ZERO);
 
-            // ✅ Set thông tin bảo hiểm
+            //  Set thông tin bảo hiểm
             newEmployee.setInsuranceHealth(
                     request.getInsuranceHealth() != null ? request.getInsuranceHealth() : BigDecimal.ZERO);
             newEmployee.setInsuranceSocial(
                     request.getInsuranceSocial() != null ? request.getInsuranceSocial() : BigDecimal.ZERO);
 
-            // ✅ Set số ngày phép
+            //  Set số ngày phép
             newEmployee.setRemainingLeaveDays(
                     request.getRemainingLeaveDays() != null ? request.getRemainingLeaveDays() : 12);
 
@@ -156,7 +156,7 @@ public class EmployeeController {
         }
     }
 
-    // ✅ Hiển thị chi tiết employee
+    //  Hiển thị chi tiết employee
     @GetMapping("/detail/{id}")
     public String showEmployeeDetail(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<Employee> employeeOpt = employeeService.getEmployeeById(id);
@@ -170,7 +170,7 @@ public class EmployeeController {
         return "admin/employee/detail";
     }
 
-    // ✅ Hiển thị form cập nhật employee
+    //  Hiển thị form cập nhật employee
     @GetMapping("/update/{id}")
     public String showUpdateForm(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<Employee> employeeOpt = employeeService.getEmployeeById(id);
@@ -201,7 +201,7 @@ public class EmployeeController {
             updateRequest.setRole(employee.getUser().getRole().name());
         }
 
-        // ✅ Set thông tin lương và phụ cấp
+        //  Set thông tin lương và phụ cấp
         updateRequest.setEmployeeCode(employee.getEmployeeCode());
         updateRequest.setBaseSalary(employee.getBaseSalary() != null ? employee.getBaseSalary() : BigDecimal.ZERO);
         updateRequest
@@ -226,7 +226,7 @@ public class EmployeeController {
         return "admin/employee/update";
     }
 
-    // ✅ Xử lý cập nhật employee
+    //  Xử lý cập nhật employee
     @PostMapping("/update")
     public String updateEmployee(@Valid @ModelAttribute("employeeUpdateRequest") EmployeeUpdateRequest request,
             BindingResult bindingResult,
@@ -275,7 +275,7 @@ public class EmployeeController {
             existingEmployee.setHireDate(request.getHireDate());
             existingEmployee.setDob(request.getDob());
 
-            // ✅ Cập nhật thông tin lương và phụ cấp
+            //  Cập nhật thông tin lương và phụ cấp
             existingEmployee.setEmployeeCode(request.getEmployeeCode());
             existingEmployee.setBaseSalary(request.getBaseSalary() != null ? request.getBaseSalary() : BigDecimal.ZERO);
             existingEmployee.setAllowanceMeal(
@@ -289,7 +289,7 @@ public class EmployeeController {
             existingEmployee.setInsuranceSocial(
                     request.getInsuranceSocial() != null ? request.getInsuranceSocial() : BigDecimal.ZERO);
             existingEmployee.setRemainingLeaveDays(
-                    request.getRemainingLeaveDays() != null ? request.getRemainingLeaveDays() : 12);            // ✅ Xử lý chuyển phòng ban và lưu lịch sử
+                    request.getRemainingLeaveDays() != null ? request.getRemainingLeaveDays() : 12);            //  Xử lý chuyển phòng ban và lưu lịch sử
             Department currentDepartment = existingEmployee.getDepartment();
             Department newDepartment = null;
             
@@ -345,7 +345,7 @@ public class EmployeeController {
         }
     }
 
-    // ✅ Hiển thị form xác nhận xóa
+    //  Hiển thị form xác nhận xóa
     @GetMapping("/delete/{id}")
     public String showDeleteForm(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         System.out.println("=== GET /admin/employee/delete/" + id + " - HIỂN THỊ FORM XÁC NHẬN XÓA ===");
@@ -363,7 +363,7 @@ public class EmployeeController {
         return "admin/employee/delete";
     }
 
-    // ✅ Xử lý xóa employee
+    //  Xử lý xóa employee
     @PostMapping("/delete/{id}")
     public String deleteEmployee(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         System.out.println("=== POST /admin/employee/delete/" + id + " - BẮT ĐẦU XỬ LÝ XÓA ===");
@@ -377,13 +377,13 @@ public class EmployeeController {
             Employee employee = employeeOpt.get();
             String employeeName = employee.getFullName();
 
-            // ✅ Thêm logging để debug
+            //  Thêm logging để debug
             System.out.println("Đang xóa nhân viên ID: " + id + ", Tên: " + employeeName);
 
             // Thực hiện xóa
             employeeService.deleteEmployee(id);
 
-            // ✅ Không cần verify, nếu không có exception thì coi như thành công
+            //  Không cần verify, nếu không có exception thì coi như thành công
             redirectAttributes.addFlashAttribute("successMessage",
                     "Xóa nhân viên '" + employeeName + "' thành công!");
 
@@ -402,7 +402,7 @@ public class EmployeeController {
         }
     }
 
-    // ✅ Alternative delete method using GET to avoid CSRF issues
+    //  Alternative delete method using GET to avoid CSRF issues
     @GetMapping("/delete/{id}/confirm")
     public String confirmDeleteEmployee(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         System.out.println("=== GET /admin/employee/delete/" + id + "/confirm - XÁC NHẬN XÓA BẰNG GET ===");
@@ -447,7 +447,7 @@ public class EmployeeController {
         }
     }
 
-    // ✅ Method tự động tạo mã nhân viên
+    //  Method tự động tạo mã nhân viên
     private String generateEmployeeCode() {
         // Tạo mã theo format EMP + timestamp (6 số cuối)
         long timestamp = System.currentTimeMillis();

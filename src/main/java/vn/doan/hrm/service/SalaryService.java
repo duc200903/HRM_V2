@@ -40,7 +40,7 @@ public class SalaryService {
                 continue;
             }
 
-            // ✅ 1. LẤY DỮ LIỆU CƠ BẢN TỪ EMPLOYEE
+            //  1. LẤY DỮ LIỆU CƠ BẢN TỪ EMPLOYEE
             BigDecimal baseSalary = Optional.ofNullable(emp.getBaseSalary()).orElse(BigDecimal.ZERO);
             BigDecimal allowanceMeal = Optional.ofNullable(emp.getAllowanceMeal()).orElse(BigDecimal.ZERO);
             BigDecimal allowanceTransport = Optional.ofNullable(emp.getAllowanceTransport()).orElse(BigDecimal.ZERO);
@@ -48,7 +48,7 @@ public class SalaryService {
             BigDecimal insuranceHealth = Optional.ofNullable(emp.getInsuranceHealth()).orElse(BigDecimal.ZERO);
             BigDecimal insuranceSocial = Optional.ofNullable(emp.getInsuranceSocial()).orElse(BigDecimal.ZERO);
 
-            // ✅ 2. TÍNH TOÁN CHẤM CÔNG
+            //  2. TÍNH TOÁN CHẤM CÔNG
             List<Attendance> attendances = attendanceRepository.findByEmployeeIdAndDateBetween(emp.getId(), startDate,
                     endDate);
 
@@ -57,7 +57,7 @@ public class SalaryService {
             }
 
             hasAttendance = true;
-            AttendanceStats stats = calculateAttendanceStats(attendances, totalWorkingDaysInMonth);            // ✅ 3. TÍNH LƯƠNG THEO NGÀY LÀM VIỆC THỰC TẾ
+            AttendanceStats stats = calculateAttendanceStats(attendances, totalWorkingDaysInMonth);            //  3. TÍNH LƯƠNG THEO NGÀY LÀM VIỆC THỰC TẾ
             System.out.println("=== DEBUG CALCULATION FOR " + emp.getFullName() + " ===");
             System.out.println("Base Salary from Employee: " + baseSalary);
             System.out.println("Working days: " + stats.workingDays);
@@ -72,13 +72,13 @@ public class SalaryService {
             // Phụ cấp xe và thâm niên: full tháng (không tính theo ngày)
             // Bảo hiểm: full tháng (không tính theo ngày)
 
-            // ✅ 4. TÍNH THƯỞNG DỰA TRÊN PERFORMANCE
+            //  4. TÍNH THƯỞNG DỰA TRÊN PERFORMANCE
             BigDecimal bonus = calculateAdvancedBonus(emp, stats);
 
-            // ✅ 5. TÍNH KHẤU TRỪ CHI TIẾT
+            //  5. TÍNH KHẤU TRỪ CHI TIẾT
             BigDecimal deduction = calculateAdvancedDeduction(stats);
 
-            // ✅ 6. TẠO SALARY RECORD
+            //  6. TẠO SALARY RECORD
             Salary salary = new Salary();
             salary.setEmployee(emp);
             salary.setMonth(month);
@@ -101,7 +101,7 @@ public class SalaryService {
         if (!hasAttendance) {
             throw new RuntimeException("Không có dữ liệu chấm công nào trong tháng " + month);
         }
-    }    // ✅ Tính lương theo tỷ lệ ngày làm việc - Sửa lại để không về 0
+    }    //  Tính lương theo tỷ lệ ngày làm việc - Sửa lại để không về 0
     private BigDecimal calculateProportionalSalary(BigDecimal fullSalary, int actualDays, int totalDays) {
         if (fullSalary == null || fullSalary.equals(BigDecimal.ZERO)) {
             return BigDecimal.ZERO;
@@ -126,7 +126,7 @@ public class SalaryService {
         
         // Đảm bảo ít nhất có lương cơ bản tối thiểu nếu đã làm việc
         return proportionalSalary.setScale(0, RoundingMode.HALF_UP);
-    }// ✅ Tính thống kê chấm công
+    }//  Tính thống kê chấm công
     private AttendanceStats calculateAttendanceStats(List<Attendance> attendances, int totalDaysInMonth) {
         AttendanceStats stats = new AttendanceStats();        // Đếm các loại attendance từ records thực tế        // Debug: In ra tất cả status để kiểm tra
         System.out.println("=== ATTENDANCE DEBUG ===");
@@ -156,7 +156,7 @@ public class SalaryService {
             .count();
             
         System.out.println("Final stats - Working: " + stats.workingDays + ", Late: " + stats.lateDays + ", Absent: " + stats.absentDays);return stats;
-    }    // ✅ Thưởng cải thiện - logic chuẩn HR hơn
+    }    //  Thưởng cải thiện - logic chuẩn HR hơn
     private BigDecimal calculateAdvancedBonus(Employee emp, AttendanceStats stats) {
         BigDecimal bonus = BigDecimal.ZERO;
 
@@ -178,7 +178,7 @@ public class SalaryService {
         return bonus;
     }
 
-    // ✅ Khấu trừ cải thiện - Chỉ tính phạt hành vi, không tính bảo hiểm
+    //  Khấu trừ cải thiện - Chỉ tính phạt hành vi, không tính bảo hiểm
     private BigDecimal calculateAdvancedDeduction(AttendanceStats stats) {
         BigDecimal deduction = BigDecimal.ZERO;
         
@@ -249,19 +249,19 @@ public class SalaryService {
         salary.setNetSalary(grossSalary.subtract(totalDeduction));        salaryRepository.save(salary);
     }
 
-    // ✅ Lấy lương của employee theo tháng hiện tại
+    //  Lấy lương của employee theo tháng hiện tại
     public Salary getCurrentMonthSalaryByEmployee(Long employeeId) {
         LocalDate now = LocalDate.now();
         String currentMonth = now.getYear() + "-" + String.format("%02d", now.getMonthValue());
         return salaryRepository.findByEmployeeIdAndMonth(employeeId, currentMonth);
     }
 
-    // ✅ Lấy tất cả lương của một employee
+    //  Lấy tất cả lương của một employee
     public List<Salary> getSalariesByEmployee(Long employeeId) {
         return salaryRepository.findByEmployeeId(employeeId);
     }
 
-    // ✅ Lấy lương theo employee và tháng cụ thể
+    //  Lấy lương theo employee và tháng cụ thể
     public Salary getSalaryByEmployeeAndMonth(Long employeeId, String month) {
         return salaryRepository.findByEmployeeIdAndMonth(employeeId, month);
     }

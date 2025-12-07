@@ -28,10 +28,10 @@ public class AttendanceService {
         return attendanceRepository.findById(id);
     }
 
-    // ✅ Lấy chấm công theo employee
+    //  Lấy chấm công theo employee
     public List<Attendance> getAttendanceByEmployee(Long employeeId) {
         return attendanceRepository.findByEmployeeId(employeeId);
-    }    // ✅ Lấy chấm công theo employee và tháng hiện tại
+    }    //  Lấy chấm công theo employee và tháng hiện tại
     public List<Attendance> getCurrentMonthAttendancesByEmployee(Long employeeId) {
         LocalDate now = LocalDate.now();
         LocalDate startOfMonth = now.withDayOfMonth(1);
@@ -39,7 +39,7 @@ public class AttendanceService {
         return attendanceRepository.findByEmployeeIdAndDateBetween(employeeId, startOfMonth, endOfMonth);
     }
 
-    // ✅ Lưu attendance
+    //  Lưu attendance
     public Attendance saveAttendance(Attendance attendance) {
         return attendanceRepository.save(attendance);
     }

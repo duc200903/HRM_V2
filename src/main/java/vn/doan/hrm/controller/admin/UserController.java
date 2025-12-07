@@ -43,20 +43,20 @@ public class UserController {
         return "admin/user/show";
     }
 
-    // ✅ Hiển thị form tạo user mới
+    //  Hiển thị form tạo user mới
     @GetMapping("/create")
     public String showCreateForm(Model model) {
         model.addAttribute("newUser", new User());
         return "admin/user/create";
     }
 
-    // ✅ Xử lý tạo user mới
+    //  Xử lý tạo user mới
     @PostMapping("/create")
     public String createUser(@Valid @ModelAttribute("newUser") User user,
             BindingResult bindingResult,
             RedirectAttributes redirectAttributes) {
 
-        // ✅ CHỈ CHO PHÉP TẠO ADMIN ACCOUNTS
+        //  CHỈ CHO PHÉP TẠO ADMIN ACCOUNTS
         if (user.getRole() != User.Role.admin) {
             bindingResult.rejectValue("role", "error.user",
                     "Không thể tạo tài khoản nhân viên từ đây. Vui lòng sử dụng 'Quản lý nhân viên' để tạo tài khoản nhân viên.");

@@ -37,7 +37,7 @@ public class Employee {
     @Column(name = "base_salary", precision = 15, scale = 2)
     private BigDecimal baseSalary = BigDecimal.ZERO;
 
-    // ✅ Các phụ cấp
+    //  Các phụ cấp
     @Column(name = "allowance_meal", precision = 15, scale = 2) // ăn
     private BigDecimal allowanceMeal = BigDecimal.ZERO;
 
@@ -47,14 +47,14 @@ public class Employee {
     @Column(name = "allowance_seniority", precision = 15, scale = 2) // thâm niên
     private BigDecimal allowanceSeniority = BigDecimal.ZERO;
 
-    // ✅ Bảo hiểm
+    //  Bảo hiểm
     @Column(name = "insurance_health", precision = 15, scale = 2) // y tế
     private BigDecimal insuranceHealth = BigDecimal.ZERO;
 
     @Column(name = "insurance_social", precision = 15, scale = 2) // xã hội
     private BigDecimal insuranceSocial = BigDecimal.ZERO;
 
-    // ✅ Số ngày phép còn lại trong năm
+    //  Số ngày phép còn lại trong năm
     @Column(name = "remaining_leave_days")
     private Integer remainingLeaveDays = 12; // Mặc định 12 ngày/năm
 
@@ -62,7 +62,7 @@ public class Employee {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @Column(name = "updated_at")
-    private LocalDateTime updatedAt = LocalDateTime.now(); // Quan hệ ngược - ✅ Thêm cascade để tự động xóa related data
+    private LocalDateTime updatedAt = LocalDateTime.now(); // Quan hệ ngược -  Thêm cascade để tự động xóa related data
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Attendance> attendances;
 
@@ -272,7 +272,7 @@ public class Employee {
             createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
 
-        // ✅ Auto-set hire date nếu chưa có
+        //  Auto-set hire date nếu chưa có
         if (hireDate == null)
             hireDate = LocalDate.now();
     }
@@ -282,7 +282,7 @@ public class Employee {
         updatedAt = LocalDateTime.now();
     }
 
-    // ✅ THÊM HELPER METHODS VÀO ĐÂY
+    //  THÊM HELPER METHODS VÀO ĐÂY
     public String getFormattedCreatedAt() {
         if (createdAt == null) {
             return "N/A";
@@ -313,7 +313,7 @@ public class Employee {
             return this.dob.format(formatter);
         }
         return "";
-    } // ✅ Computed field: Số năm làm việc (chính xác từ ngày vào làm)
+    } //  Computed field: Số năm làm việc (chính xác từ ngày vào làm)
 
     public Integer getYearsOfService() {
         if (hireDate == null) {
@@ -333,7 +333,7 @@ public class Employee {
         return Math.max(0, years); // Đảm bảo không âm
     }
 
-    // ✅ Thời gian làm việc chi tiết (năm, tháng, ngày)
+    //  Thời gian làm việc chi tiết (năm, tháng, ngày)
     public String getDetailedWorkingTime() {
         if (hireDate == null) {
             return "Chưa xác định ngày vào làm";
@@ -398,7 +398,7 @@ public class Employee {
         return result.length() > 0 ? result.toString() : "Mới vào làm hôm nay";
     }
 
-    // ✅ Tổng số ngày đã làm việc
+    //  Tổng số ngày đã làm việc
     public Long getTotalWorkingDays() {
         if (hireDate == null) {
             return 0L;
@@ -410,7 +410,7 @@ public class Employee {
         return java.time.temporal.ChronoUnit.DAYS.between(hireDate, now);
     }
 
-    // ✅ Số tháng đã làm việc
+    //  Số tháng đã làm việc
     public Long getTotalWorkingMonths() {
         if (hireDate == null) {
             return 0L;
@@ -422,7 +422,7 @@ public class Employee {
         return java.time.temporal.ChronoUnit.MONTHS.between(hireDate, now);
     }
 
-    // ✅ Tính tổng lương (lương cơ bản + phụ cấp)
+    //  Tính tổng lương (lương cơ bản + phụ cấp)
     public BigDecimal getTotalSalary() {
         BigDecimal total = baseSalary != null ? baseSalary : BigDecimal.ZERO;
 
@@ -439,7 +439,7 @@ public class Employee {
         return total;
     }
 
-    // ✅ Tính tổng khấu trừ (bảo hiểm)
+    //  Tính tổng khấu trừ (bảo hiểm)
     public BigDecimal getTotalInsurance() {
         BigDecimal total = BigDecimal.ZERO;
 
@@ -453,7 +453,7 @@ public class Employee {
         return total;
     }
 
-    // ✅ Tính lương thực lãnh (tổng lương - bảo hiểm)
+    //  Tính lương thực lãnh (tổng lương - bảo hiểm)
     public BigDecimal getNetSalary() {
         return getTotalSalary().subtract(getTotalInsurance());
     }

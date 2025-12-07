@@ -35,17 +35,17 @@ public class DashboardService {
     public Map<String, Object> getDashboardStats() {
         Map<String, Object> stats = new HashMap<>();
         
-        // ✅ 1. THỐNG KÊ CƠ BẢN
+        //  1. THỐNG KÊ CƠ BẢN
         stats.put("totalUsers", userService.countUsers());
         stats.put("totalEmployees", employeeService.getAllEmployees().size());
         stats.put("totalDepartments", departmentService.getAllDepartments().size());
-          // ✅ 2. THỐNG KÊ THEO VAI TRÒ
+          //  2. THỐNG KÊ THEO VAI TRÒ
         stats.put("adminUsers", userService.countUsersByRole(User.Role.admin));
         stats.put("hrUsers", userService.countUsersByRole(User.Role.hr));
         stats.put("managerUsers", userService.countUsersByRole(User.Role.manager));
         stats.put("employeeUsers", userService.countUsersByRole(User.Role.employee));
         
-        // ✅ 3. THỐNG KÊ ĐơN NGHỈ PHÉP
+        //  3. THỐNG KÊ ĐơN NGHỈ PHÉP
         var allLeaveRequests = requestLeaveService.getAllRequestLeaves();
         stats.put("totalLeaveRequests", allLeaveRequests.size());
         
@@ -59,7 +59,7 @@ public class DashboardService {
             .count();
         stats.put("approvedLeaveRequests", approvedLeaves);
         
-        // ✅ 4. THỐNG KÊ THÁNG HIỆN TẠI
+        //  4. THỐNG KÊ THÁNG HIỆN TẠI
         LocalDate now = LocalDate.now();
         String currentMonth = now.getYear() + "-" + String.format("%02d", now.getMonthValue());
         
@@ -72,7 +72,7 @@ public class DashboardService {
             .reduce(BigDecimal.ZERO, BigDecimal::add);
         stats.put("totalSalaryAmount", totalSalaryAmount);
         
-        // ✅ 5. THỐNG KÊ CHẤM CÔNG HÔM NAY
+        //  5. THỐNG KÊ CHẤM CÔNG HÔM NAY
         var todayAttendances = attendanceService.getAttendanceByDate(now);
         stats.put("todayAttendances", todayAttendances.size());
         
@@ -91,7 +91,7 @@ public class DashboardService {
             .count();
         stats.put("todayAbsent", todayAbsent);
         
-        // ✅ 6. THỐNG KÊ TREND (SO VỚI THÁNG TRƯỚC)
+        //  6. THỐNG KÊ TREND (SO VỚI THÁNG TRƯỚC)
         YearMonth currentYearMonth = YearMonth.now();
         YearMonth lastYearMonth = currentYearMonth.minusMonths(1);
         String lastMonth = lastYearMonth.getYear() + "-" + String.format("%02d", lastYearMonth.getMonthValue());
@@ -103,7 +103,7 @@ public class DashboardService {
         return stats;
     }
     
-    // ✅ Lấy thống kê theo tháng cụ thể
+    //  Lấy thống kê theo tháng cụ thể
     public Map<String, Object> getMonthlyStats(int year, int month) {
         Map<String, Object> stats = new HashMap<>();
         String monthStr = year + "-" + String.format("%02d", month);
@@ -119,7 +119,7 @@ public class DashboardService {
         return stats;
     }
     
-    // ✅ Lấy top departments theo số nhân viên
+    //  Lấy top departments theo số nhân viên
     public Map<String, Long> getDepartmentStats() {
         Map<String, Long> deptStats = new HashMap<>();
         

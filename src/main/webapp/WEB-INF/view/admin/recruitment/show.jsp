@@ -167,7 +167,7 @@
             </div>
         </div>
 
-        <!-- ✅ Success/Error Messages -->
+        <!--  Success/Error Messages -->
         <c:if test="${not empty successMessage}">
             <div class="toast-container position-fixed bottom-0 end-0 p-3">
                 <div class="toast show" role="alert">
@@ -200,7 +200,7 @@
             crossorigin="anonymous"
         ></script>
 
-        <!-- ✅ Auto hide toasts after 5 seconds -->
+        <!--  Auto hide toasts after 5 seconds -->
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var toastElements = document.querySelectorAll('.toast');

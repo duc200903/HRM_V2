@@ -66,7 +66,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   />
                 </div>
 
-                <!-- ✅ ACCOUNT INFO SECTION -->
+                <!--  ACCOUNT INFO SECTION -->
                 <div class="card mb-4">
                   <div class="card-header bg-warning text-white">
                     <h5 class="mb-0">
@@ -136,7 +136,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   </div>
                 </div>
 
-                <!-- ✅ EMPLOYEE INFO SECTION -->
+                <!--  EMPLOYEE INFO SECTION -->
                 <div class="card mb-4">
                   <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">
@@ -281,7 +281,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                     </div>                  </div>
                 </div>
 
-                <!-- ✅ SALARY AND ALLOWANCE SECTION -->
+                <!--  SALARY AND ALLOWANCE SECTION -->
                 <div class="card mb-4">
                   <div class="card-header bg-success text-white">
                     <h5 class="mb-0">
@@ -451,13 +451,13 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
                   </div>
                 </div>
 
-                <!-- ✅ Info alert -->
+                <!--  Info alert -->
                 <div class="alert alert-info">
                   <i class="fas fa-info-circle me-2"></i>
                   <small>Các trường có dấu (*) là bắt buộc. Thông tin lương sẽ được cập nhật theo thay đổi.</small>
                 </div>
 
-                <!-- ✅ Action buttons -->
+                <!--  Action buttons -->
                 <div class="d-flex gap-2">
                   <button type="submit" class="btn btn-warning">
                     <i class="fas fa-save me-1"></i>Cập nhật nhân viên
@@ -477,7 +477,7 @@ uri="http://www.springframework.org/tags/form" prefix="form"%>
       crossorigin="anonymous"
     ></script>
     
-    <!-- ✅ JavaScript for real-time salary calculation -->
+    <!--  JavaScript for real-time salary calculation -->
     <script>
     function formatCurrency(amount) {
       return new Intl.NumberFormat('vi-VN').format(amount) + ' VNĐ';

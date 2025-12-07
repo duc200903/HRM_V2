@@ -36,14 +36,14 @@ public class DepartmentController {
         return "admin/department/show";
     }
 
-    // ✅ Hiển thị form tạo department mới
+    //  Hiển thị form tạo department mới
     @GetMapping("/create")
     public String showCreateForm(Model model) {
         model.addAttribute("newDepartment", new Department());
         return "admin/department/create";
     }
 
-    // ✅ Xử lý tạo department mới
+    //  Xử lý tạo department mới
     @PostMapping("/create")
     public String createDepartment(@Valid @ModelAttribute("newDepartment") Department department,
             BindingResult bindingResult,
@@ -72,7 +72,7 @@ public class DepartmentController {
         }
     }
 
-    // ✅ Hiển thị chi tiết department
+    //  Hiển thị chi tiết department
     @GetMapping("/detail/{id}")
     public String showDepartmentDetail(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<Department> departmentOpt = departmentService.getDepartmentById(id);
@@ -86,7 +86,7 @@ public class DepartmentController {
         return "admin/department/detail";
     }
 
-    // ✅ Hiển thị form cập nhật department
+    //  Hiển thị form cập nhật department
     @GetMapping("/update/{id}")
     public String showUpdateForm(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<Department> departmentOpt = departmentService.getDepartmentById(id);
@@ -99,7 +99,7 @@ public class DepartmentController {
         return "admin/department/update";
     }
 
-    // ✅ Xử lý cập nhật department
+    //  Xử lý cập nhật department
     @PostMapping("/update")
     public String updateDepartment(@Valid @ModelAttribute("newDepartment") Department department,
             BindingResult bindingResult,
@@ -137,7 +137,7 @@ public class DepartmentController {
         }
     }
 
-    // ✅ Hiển thị form xác nhận xóa
+    //  Hiển thị form xác nhận xóa
     @GetMapping("/delete/{id}")
     public String showDeleteForm(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
         Optional<Department> departmentOpt = departmentService.getDepartmentById(id);
@@ -154,7 +154,7 @@ public class DepartmentController {
         return "admin/department/delete";
     }
 
-    // ✅ Xử lý xóa department
+    //  Xử lý xóa department
     @PostMapping("/delete/{id}")
     public String deleteDepartment(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         try {

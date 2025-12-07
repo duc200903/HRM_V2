@@ -65,7 +65,7 @@ public class PerformanceReviewController {
         try {
             review.setReviewedAt(LocalDateTime.now());
 
-            // ✅ Gán người đánh giá là người đang đăng nhập
+            //  Gán người đánh giá là người đang đăng nhập
             String email = principal.getName();
             review.setReviewer(userService.findByEmail(email));
 
@@ -88,7 +88,7 @@ public class PerformanceReviewController {
             return "redirect:/admin/performance-review";
         }
 
-        // ✅ Chỉ gọi format sau khi đảm bảo review != null
+        //  Chỉ gọi format sau khi đảm bảo review != null
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         String formattedReviewedAt = review.getReviewedAt() != null
                 ? review.getReviewedAt().format(formatter)
@@ -116,16 +116,16 @@ public class PerformanceReviewController {
     public String updateReview(@ModelAttribute("review") PerformanceReview updatedReview,
             RedirectAttributes redirectAttributes) {
         try {
-            // ✅ Lấy review gốc từ DB
+            //  Lấy review gốc từ DB
             PerformanceReview existingReview = reviewService.getReviewById(updatedReview.getId())
                     .orElseThrow(() -> new IllegalArgumentException(
                             "Không tìm thấy đánh giá với ID: " + updatedReview.getId()));
 
-            // ✅ Giữ nguyên các trường cũ
+            //  Giữ nguyên các trường cũ
             existingReview.setEmployee(existingReview.getEmployee());
             existingReview.setPeriod(existingReview.getPeriod());
 
-            // ✅ Cập nhật các trường cho phép chỉnh sửa
+            //  Cập nhật các trường cho phép chỉnh sửa
             existingReview.setScore(updatedReview.getScore());
             existingReview.setComments(updatedReview.getComments());
             existingReview.setReviewer(updatedReview.getReviewer());

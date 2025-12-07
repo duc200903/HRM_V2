@@ -61,7 +61,7 @@ public class TrainingService {
             employeeTraining.setTraining(training);
             employeeTraining.setResult("Pending");
 
-            // ✅ QUAN TRỌNG: Phải save vào database
+            //  QUAN TRỌNG: Phải save vào database
             employeeTrainingRepository.save(employeeTraining);
         }
     }

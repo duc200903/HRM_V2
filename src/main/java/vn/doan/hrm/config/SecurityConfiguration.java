@@ -33,24 +33,24 @@ public class SecurityConfiguration {
         http
                 .authorizeHttpRequests(auth -> auth
 
-                        // ✅ Admin Management
+                        //  Admin Management
                         .requestMatchers("/admin/user/**").hasRole("ADMIN")
 
-                        // ✅ Department Management & leave-requests
+                        //  Department Management & leave-requests
                        .requestMatchers("/admin/department/**").hasRole("ADMIN")
                         .requestMatchers("/admin/request-leave/**").hasRole("ADMIN")
 
-                       // ✅ Attendance
+                       //  Attendance
                         .requestMatchers("/admin/attendance/**").hasAnyRole("ADMIN", "HR")
 
-                        // ✅ Salary report
+                        //  Salary report
                         .requestMatchers("/admin/salary-report/**").hasAnyRole("ADMIN", "HR")
                         // Training
                         .requestMatchers("/admin/training/**").hasAnyRole("ADMIN", "HR")
-                        // ✅ Recruitment
+                        //  Recruitment
                         .requestMatchers("/admin/recruitment/**").hasAnyRole("ADMIN", "HR")
 
-                        // ✅ Performance Review
+                        //  Performance Review
                         .requestMatchers("/admin/performance-review/create",
                                 "/admin/performance-review/update/**",
                                 "/admin/performance-review/delete/**")
@@ -59,19 +59,19 @@ public class SecurityConfiguration {
                                 "/admin/performance-review/detail/**")
                         .hasAnyRole("ADMIN", "MANAGER")
 
-                        // ✅ Employee Management
+                        //  Employee Management
                         .requestMatchers("/admin/employee/create",
                                 "/admin/employee/update/**",
                                 "/admin/employee/delete/**")
                         .hasAnyRole("ADMIN", "HR")
                         .requestMatchers("/admin/employee", "/admin/employee/detail/**")
-                        .hasAnyRole("ADMIN", "HR", "MANAGER")                        // ✅ Dashboard
+                        .hasAnyRole("ADMIN", "HR", "MANAGER")                        //  Dashboard
                         .requestMatchers("/admin/dashboard").hasAnyRole("ADMIN", "HR", "MANAGER")
 
-                        // ✅ User Personal Pages
+                        //  User Personal Pages
                         .requestMatchers("/home", "/me", "/my-**").hasAnyRole("ADMIN", "HR", "MANAGER", "EMPLOYEE")
 
-                        // ✅ Allow public/static pages
+                        //  Allow public/static pages
                         .anyRequest().permitAll())
                 .formLogin(form -> form
                         .loginPage("/login")
